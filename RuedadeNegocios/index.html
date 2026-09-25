@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Novedades Ruedas de Negocio Junio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef2f7; --paper:#ffffff; --ink:#0f1f3d; --muted:#5a6a85; --line:#d6dde8;
+  --navy:#0a1f5c; --tile:#0b4a8b; --tile-adj:#1590cf; --akzo:#0068b4;
+  --ok:#8cd14b; --warn:#ffc21a; --bad:#ff6b5b; --good-text:#2e8b2e; --bad-text:#c8372b;
+  --row-alt:#f5f8fc; --chip:#e3ebf6; --chip-ink:#0a1f5c; --flag-bg:#fff6dd; --flag-line:#f0cf6b;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b1324; --paper:#121c33; --ink:#e7edf8; --muted:#9fb0cc; --line:#27345270;
+    --navy:#0f2a73; --row-alt:#16213b; --chip:#1b2a4a; --chip-ink:#dbe6f8;
+    --good-text:#8cd14b; --bad-text:#ff8a7d; --flag-bg:#2a2410; --flag-line:#6b5a1f;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b1324; --paper:#121c33; --ink:#e7edf8; --muted:#9fb0cc; --line:#27345270;
+  --navy:#0f2a73; --row-alt:#16213b; --chip:#1b2a4a; --chip-ink:#dbe6f8;
+  --good-text:#8cd14b; --bad-text:#ff8a7d; --flag-bg:#2a2410; --flag-line:#6b5a1f;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Barlow",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:15px;line-height:1.45}
+.num{font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-variant-numeric:tabular-nums}
+.wrap{max-width:1280px;margin:0 auto;padding:20px 20px 40px}
+
+/* ---- título ---- */
+.title{margin:4px 0 12px;font-size:clamp(24px,3.4vw,36px);font-weight:700;color:var(--ink);line-height:1.1}
+
+/* ---- contexto de la actividad ---- */
+.ctx{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;background:var(--navy);color:#fff;border-radius:8px;padding:9px 16px;margin-bottom:16px;font-size:13.5px}
+.ctx b{font-weight:700}
+.ctx .t{font-size:15px;font-weight:700}
+.ctx .g{color:var(--ok);font-weight:700}
+.ctx .sep{width:1px;align-self:stretch;background:#ffffff40}
+@media (max-width:700px){.ctx .sep{display:none}}
+
+
+.pay{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;background:var(--paper);border:1px solid var(--line);border-left:6px solid #4caf50;border-radius:8px;padding:8px 16px;margin:-8px 0 16px;font-size:14px}
+.pay-v{font-size:17px;font-weight:700;color:var(--good-text)}
+
+/* ---- barra superior ---- */
+.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:14px}
+.city{font-size:clamp(30px,4.5vw,46px);font-weight:700;color:var(--akzo);line-height:1;margin:0}
+.picker{display:flex;flex-direction:column;gap:6px;min-width:280px}
+.picker label{font-size:13px;color:var(--muted);font-weight:500}
+select{appearance:none;-webkit-appearance:none;font:600 15px "Barlow",system-ui,sans-serif;color:var(--ink);background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230068b4' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 14px center;border:2px solid var(--akzo);border-radius:8px;padding:10px 40px 10px 14px;cursor:pointer}
+select:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.chips button{border:0;background:var(--chip);color:var(--chip-ink);font:500 13px "Barlow",sans-serif;padding:6px 12px;border-radius:999px;cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.client-bar{background:var(--navy);color:#fff;font-weight:700;font-size:18px;padding:12px 18px;border-radius:4px;margin-bottom:22px}
+
+/* ---- rejilla principal ---- */
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+.band{background:var(--navy);color:#fff;text-align:center;font-weight:700;font-size:17px;padding:8px;border-radius:6px;margin:0 0 12px;box-shadow:0 3px 0 #06143d33}
+.block{margin-bottom:22px}
+.scen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.05fr);gap:8px;align-items:stretch}
+.tile{background:var(--tile);color:#fff;border-radius:12px;padding:12px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;min-height:76px;box-shadow:0 2px 4px #0003}
+.adj .tile{background:var(--tile-adj)}
+.tile .v{font-size:clamp(20px,2.4vw,28px);font-weight:700;line-height:1.05}
+.tile .l{font-size:14px;opacity:.95}
+.pcts{display:flex;flex-direction:column;gap:8px}
+.pcts .tile{min-height:0;padding:6px 8px}
+.pcts .v{font-size:clamp(20px,2.2vw,26px)}
+.short{margin:10px 2px 0;color:var(--bad-text);font-size:14px;font-weight:500}
+.v.ok{color:var(--ok)} .v.warn{color:var(--warn)}
+
+/* diferenciales nuevos */
+.diffs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.diff{background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--akzo);border-radius:10px;padding:10px 14px}
+.diff .dl{font-size:13px;color:var(--muted)}
+.diff .dv{font-size:26px;font-weight:700;line-height:1.1}
+.diff .ds{font-size:12.5px;color:var(--muted)}
+.diff.neg{border-left-color:var(--bad)} .diff.neg .dv{color:var(--bad-text)}
+.diff.pos{border-left-color:#4caf50} .diff.pos .dv{color:var(--good-text)}
+@media (max-width:520px){.scen{grid-template-columns:repeat(3,minmax(0,1fr))}.pcts{grid-column:1/-1;flex-direction:row}.pcts .tile{flex:1}.diffs{grid-template-columns:1fr}}
+
+/* detalle */
+.kpis{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.kpis .tile{flex:1 1 120px;max-width:170px}
+.kpis .tile.est{background:var(--akzo)}
+.tbl-wrap{overflow-x:auto;margin:14px auto 0;max-width:640px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;background:var(--paper)}
+th{background:var(--navy);color:#fff;font-weight:600;padding:6px 10px;text-align:left;white-space:nowrap}
+th.r,td.r{text-align:right}
+td{padding:5px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+tbody tr:nth-child(even){background:var(--row-alt)}
+tfoot td{font-weight:700;border-top:2px solid var(--navy);border-bottom:0}
+.cons{margin:16px 0 0 8px}
+.cons h3{font-size:14px;font-style:italic;margin:0 0 4px}
+.cons ul{margin:0;padding-left:20px;font-size:14px}
+.total{background:var(--tile);color:#fff;text-align:center;border-radius:12px;padding:12px;margin-top:16px;box-shadow:0 2px 4px #0003}
+.total .v{font-size:30px;font-weight:700;color:var(--ok)}
+.total .l{font-size:16px}
+
+/* consolidado */
+.cons-view .tbl-wrap{max-width:none}
+.cons-view td,.cons-view th{padding:4px 7px}
+.cons-view table{font-size:12.5px}
+.cons-view th{white-space:normal;line-height:1.15;vertical-align:bottom;font-size:12px}
+.cons-view td:first-child{white-space:normal;min-width:150px;max-width:210px;line-height:1.2}
+.cons-view .city-row td{padding:3px 7px;font-size:12px}
+.cons-view .client-bar{padding:8px 14px;font-size:16px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.cons-view .client-bar small{font-weight:500;font-size:12.5px;opacity:.85}
+body.cons-mode .wrap{max-width:1560px;padding-top:12px}
+body.cons-mode .ctx{padding:6px 14px;margin-bottom:10px;font-size:12.5px}
+body.cons-mode .pay{padding:5px 14px;margin:-4px 0 10px;font-size:13px}
+body.cons-mode .top{margin-bottom:6px}
+body.cons-mode .chips{margin-bottom:8px}
+body.cons-mode .foot{margin-top:8px;padding-top:6px;font-size:11.5px}
+body.cons-mode .foot .notes{gap:0}
+body.cons-mode .city{font-size:24px}
+body.cons-mode .picker label{display:none}
+body.cons-mode select{padding:6px 36px 6px 12px;font-size:14px}
+body.cons-mode .top{align-items:center}
+body.cons-mode .title{font-size:22px;margin:0 0 6px}
+.cons-view tbody tr{cursor:pointer}
+.cons-view tbody tr:hover{background:var(--chip)}
+.cons-view .grp th{background:var(--akzo);text-align:center;font-size:12.5px;letter-spacing:.02em}
+.cons-view .gs{border-left:2px solid var(--line)}
+.cons-view thead .gs{border-left-color:#ffffff55}
+.city-row td{background:var(--chip);font-weight:700;color:var(--chip-ink)}
+.neg-t{color:var(--bad-text);font-weight:600} .pos-t{color:var(--good-text);font-weight:600}
+.pc-ok{color:var(--good-text);font-weight:600} .pc-warn{color:#b98700;font-weight:600}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:28px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.foot .notes{display:flex;flex-direction:column;gap:2px}
+.brand{font-weight:700;color:var(--akzo);font-size:18px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 class="title">Novedades Ruedas de Negocio Junio</h1>
+  <div class="ctx" role="note" aria-label="Contexto de la actividad">
+    <span class="t">Rueda de Negocios Pintuco 2026</span><span class="sep"></span>
+    <span>Captura <b>12 al 17 jun</b> · Facturación <b>hasta el 26 jun</b></span><span class="sep"></span>
+    <span>Decorativo <b class="g">6%</b> SA y Herramientas, <b class="g">10%</b> SMB</span><span class="sep"></span>
+    <span>Projects <b class="g">3%</b> portafolio total</span><span class="sep"></span>
+    <span>Nota crédito por cumplimiento; la cuota define el mínimo y el máximo a pedir</span>
+  </div>
+  <div class="pay" role="note"><span>Los pagos de los clientes que cumplieron sin novedad se realizaron el <b>27 de julio</b>, por un valor de <b class="pay-v num">429 MM</b> (antes de IVA).</span></div>
+  <div class="top">
+    <h2 class="city" id="city">Medellín</h2>
+    <div class="picker">
+      <label for="sel">Cliente</label>
+      <select id="sel"></select>
+    </div>
+  </div>
+  <nav class="chips" id="chips" aria-label="Filtrar por ciudad"></nav>
+
+  <main id="clientView">
+    <div class="client-bar" id="clientName"></div>
+    <div class="grid">
+      <section>
+        <div class="block">
+          <h2 class="band">Liquidación Actual</h2>
+          <div class="scen" id="actual"></div>
+          <div class="diffs" id="diffs"></div>
+        </div>
+        <div class="block adj">
+          <h2 class="band">Liquidación Incluyendo Novedades</h2>
+          <div class="scen" id="ajustada"></div>
+          <p class="short" id="shortNote" hidden></p>
+        </div>
+      </section>
+      <section>
+        <h2 class="band">Detalle Cumplimiento</h2>
+        <div class="kpis" id="kpis"></div>
+        <div class="tbl-wrap"><table id="pedidos"></table></div>
+        <div class="cons"><h3>Consideraciones:</h3><ul id="consid"></ul></div>
+        <div class="total"><div class="v num" id="difFact"></div><div class="l">Diferencia en Facturación</div></div>
+      </section>
+    </div>
+  </main>
+
+  <main id="consView" class="cons-view" hidden>
+    <div class="client-bar"><span>Consolidado de clientes</span><small>Cifras en millones de pesos (MM)</small></div>
+    <div class="tbl-wrap"><table id="consTbl"></table></div>
+  </main>
+
+  <div class="foot"><span class="notes"><span>Cifras en millones de pesos (MM).</span><span>El valor de la nota crédito es un valor estimado.</span><span>Las notas crédito por diferencia en precio se toman solo como referencia: no se tienen en cuenta en el cálculo del cumplimiento.</span></span><span class="brand">AkzoNobel</span></div>
+</div>
+
+<script>
+const CONSID_DEFAULT = ["Pedidos con agotados o inconvenientes logísticos"];
+// Valores base tomados de los slides. "slide" guarda lo que mostraba el slide para el control de datos.
+const DATA = [
+ {id:"sanpio", ciudad:"Medellín", cliente:"GRUPO SAN PIO S.A.S.",
+  cuota:1422, captura:1498, factura:1397, capturaAj:1498, facturaAj:1482.3,
+  nPedidos:7, valorPedidos:85.3, ncPrecio:58, ncEstimada:82.4,
+  slide:{pCap:105.4,pFac:98.3,pCapAj:105.4,pFacAj:104.2,difFact:85.1},
+  pedidos:[["1045988436","18, 19, 23, 25 jun · 14, 16 jul",1.4,"16.06.2026"],["1045989556","19, 23 jun · 2, 15, 21 jul",4.2,"16.06.2026"],["1045989952","17 jun · 9, 22 jul",5.0,"16.06.2026"],["1045990911","2, 6, 7, 9, 16 jul",65.3,"16.06.2026"],["1045992444","19, 22, 23, 25 jun · 7 jul",3.4,"16.06.2026"],["1046003492","19, 22, 24 jun · 15 jul",1.7,"17.06.2026"],["1046003680","19, 26 jun · 7, 9, 15 jul",4.3,"17.06.2026"]]},
+ {id:"construtubos", ciudad:"Medellín", cliente:"CONSTRUTUBOS S.A.S",
+  pctDec:1, cuota:177, captura:179, factura:166, capturaAj:179, facturaAj:176.5,
+  nPedidos:3, valorPedidos:10.5, ncPrecio:8.5, ncEstimada:12.3,
+  slide:{pCap:101.3,pFac:93.9,pCapAj:103.2,pFacAj:103.2,difFact:16.4},
+  pedidos:[["1045964544","22 jun · 2 jul",0.1,"13.06.2026"],["1045964554","18, 29 jun",0.4,"13.06.2026"],["1046003709","25, 29 jun · 6, 7 jul",10.0,"17.06.2026"]]},
+ {id:"pintind", ciudad:"Medellín", cliente:"PINTURAS INDUSTRIALES S.A.S.",
+  cuota:869, captura:832, factura:786, capturaAj:890, facturaAj:888,
+  nPedidos:15, valorPedidos:51.9, ncPrecio:21.4, ncEstimada:42.1,
+  slide:{pCap:95.8,pFac:90.5,pCapAj:102.4,pFacAj:102.3,difFact:102.1},
+  consideraciones:["Pedidos con agotados o inconvenientes logísticos","En la validación, la captura queda en 890 MM: 51 MM adicionales que se suman tanto a la captura como a la facturación","La diferencia final en facturación frente a la liquidación es de 102 MM"],
+  pedidos:[["1045949831", "16, 17, 22, 26 jun · 2, 23 jul", 0.9, "12.06.2026"], ["1045957945", "16, 19 jun · 21, 22, 28, 31 jul", 0.8, "12.06.2026"], ["1045992254", "18, 19, 26 jun · 1, 29 jul", 0.4, "16.06.2026"], ["1045992300", "18, 19, 22, 24 jun · 1, 17 jul", 2.5, "16.06.2026"], ["1046003239", "19, 22, 23, 26 jun · 28 jul", 0.1, "17.06.2026"], ["1046003249", "19 jul · 14 jul", 0.3, "17.06.2026"], ["1046003289", "23 jun · 2 jul", 0.2, "17.06.2026"], ["1046003323", "23, 26 jun · 14, 23 jul", 0.4, "17.06.2026"], ["1046003335", "23 jun · 2 jul", 0.5, "17.06.2026"], ["1046003382", "23 jun · 1 jul", 0.3, "17.06.2026"], ["1046004920", "19, 22, 23, 26 jun · 1, 2 jul", 0.4, "17.06.2026"], ["1046004957", "22, 24 jun · 23 jul", 0.1, "17.06.2026"], ["1046004967", "22, 24 jun · 1 jul", 0.3, "17.06.2026"], ["1046005024", "26, 29 jun · 14 jul", 36.0, "17.06.2026"], ["1046013197", "22, 24 jun", 8.7, "18.06.2026", "Correo autorización RC y MG"]]},
+ {id:"chp", ciudad:"Bucaramanga", cliente:"CHP MATERIALES PARA CONSTRUCCION",
+  cuota:1025, captura:1072, factura:750, capturaAj:1072, facturaAj:1054.09,
+  nPedidos:5, valorPedidos:304, ncPrecio:null, ncEstimada:39.8,
+  slide:{pCap:104.6,pFac:73.2,pCapAj:104.6,pFacAj:103.9,difFact:315.2},
+  pedidos:[["1046005130","20, 26, 27, 28 jun · 2, 6 jul",198.67],["1046005153","19, 20, 27 jun · 16, 18 jul",1.04],["1045992667","20, 22, 23, 25, 26 jun · 2 jul",2.55],["1046000380","19, 20, 24, 25, 27, 30 jun · 16 jul",0.59],["1046005073","20, 22, 23, 26, 28 jun · 2, 6 jul",101.24]]},
+ {id:"ferredistarco", ciudad:"Bucaramanga", cliente:"FERREDISTARCO S.A.S.",
+  pctDec:1, cuota:158, captura:149, factura:144, capturaAj:149, facturaAj:146.7,
+  nPedidos:1, valorPedidos:2.7, ncPrecio:null, ncEstimada:9.5,
+  slide:{pCap:94.4,pFac:91.7,pCapAj:100.1,pFacAj:99.9,difFact:13},
+  pedidos:[["1045990429","24, 25, 27 jun · 11, 30 jul",2.7]]},
+ {id:"galvis", ciudad:"Bucaramanga", cliente:"GALVIS ANAYA, JUAN DE JESUS",
+  cuota:96, captura:97.2, factura:93, capturaAj:97.2, facturaAj:94.64,
+  nPedidos:2, valorPedidos:1.64, ncPrecio:null, ncEstimada:5.8,
+  slide:{pCap:101.3,pFac:97.0,pCapAj:104.5,pFacAj:104.2,difFact:6.9},
+  pedidos:[["1045990646","18 jun · 31 jul",1.6,"16.06.2026"],["1045991721","19, 20, 25 jun · 2 jul",0.04,"16.06.2026"]]},
+ {id:"ferreinox", ciudad:"Pereira", cliente:"FERREINOX S.A.S. BIC",
+  cuota:1431, captura:1585, factura:1302, capturaAj:1585, facturaAj:1570,
+  totalPedidos:268, nPedidos:5, valorPedidos:268, ncPrecio:null, ncEstimada:64.3,
+  slide:{pCap:110.7,pFac:90.9,pCapAj:110.7,pFacAj:109.6,difFact:267.2},
+  pedidos:[["1045991959","20, 23, 26 jun · 1, 23 jul",0.2,"16.06.2026"],["1045992531","20, 23, 24, 25, 26 jun · 3, 17, 31 jul",6.1,"16.06.2026"],["1045992704","23, 26, 29, 30 jun · 3, 17, 23 jul",255.4,"17.06.2026"],["1045993111","23, 25, 26 jun · 3, 23 jul",6.1,"17.06.2026"],["1045964444","17, 25, 26 jun · 1, 23 jul",0.3,"13.06.2026"]]},
+ {id:"bdb", ciudad:"Pereira", cliente:"GRUPO BDB SAS",
+  cuota:439, captura:413, factura:392, capturaAj:413, facturaAj:410,
+  nPedidos:8, valorPedidos:18, ncPrecio:null, ncEstimada:19.3,
+  slide:{pCap:94.0,pFac:89.2,pCapAj:100.2,pFacAj:99.9,difFact:47},
+  pedidos:[["1045993166","26 jun · 1, 10 jul",1.7,"17.06.2026"],["1045993169","26 jun · 1, 24 jul",0.8,"17.06.2026"],["1045993175","26 jun · 1, 10 jul",1.6,"17.06.2026"],["1045993178","20, 23, 26 jun · 3, 15, 17, 23 jul",0.7,"17.06.2026"],["1045993221","23, 24 jun · 10 jul",0.9,"17.06.2026"],["1045993227","24, 26, 30 jun · 10 jul",5.5,"17.06.2026"],["1045993230","22, 23, 24, 26, 30 jun · 3, 15 jul",2.2,"17.06.2026"],["1046004133","24 jun · 1 jul",4.6,"17.06.2026"]]}
+];
+
+const nf = (v,d=2)=>v.toLocaleString("es-CO",{minimumFractionDigits:0,maximumFractionDigits:d});
+const mm = v => nf(v)+" MM";
+const f1 = v => v.toLocaleString("es-CO",{minimumFractionDigits:1,maximumFractionDigits:1})+" MM";
+const sf1 = v => (v>0?"+":v<0?"−":"")+f1(Math.abs(v));
+const smm = v => (v>0?"+":v<0?"−":"")+nf(Math.abs(v))+" MM";
+let PCT_DEC = 0; // decimales de % del cliente activo
+const pct = (v,d=PCT_DEC) => (v*100).toLocaleString("es-CO",{minimumFractionDigits:d,maximumFractionDigits:d})+"%";
+const r1 = v => Math.round(v*10)/10;
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $ = id => document.getElementById(id);
+
+function calc(c){
+  const sum = c.pedidos.reduce((a,p)=>a+p[2],0);
+  return {
+    pCap:c.captura/c.cuota, pFac:c.factura/c.cuota,
+    pCapAj:c.capturaAj/c.cuota, pFacAj:c.facturaAj/c.cuota,
+    brecha:c.factura-c.cuota, brechaAj:c.facturaAj-c.cuota,
+    deltaFac:c.facturaAj-c.factura, sumPed:sum
+  };
+}
+
+function tile(v,l,cls=""){return `<div class="tile"><div class="v num ${cls}">${v}</div><div class="l">${l}</div></div>`}
+function pctTile(p,l){return tile(pct(p),l,p>=1?"ok":"warn")}
+function scen(cuota,cap,fac,pCap,pFac,facDec=2){
+  return tile(mm(cuota),"Cuota")+tile(nf(cap,facDec)+" MM","Captura")+tile(nf(fac,facDec)+" MM","Factura")+
+    `<div class="pcts">${pctTile(pCap,"%Captura")}${pctTile(pFac,"%Factura")}</div>`;
+}
+
+function renderClient(c){
+  const k = calc(c);
+  PCT_DEC = c.pctDec||0;
+  const dec = c.pedidos.some(p=>Math.round(p[2]*100)%10!==0)?2:1;
+  const fx = v => v.toLocaleString("es-CO",{minimumFractionDigits:dec,maximumFractionDigits:dec});
+  const sfx = v => (v>0?"+":v<0?"−":"")+fx(Math.abs(v))+" MM";
+  $("city").textContent = c.ciudad;
+  $("clientName").textContent = c.cliente;
+  $("actual").innerHTML = scen(c.cuota,c.captura,c.factura,k.pCap,k.pFac);
+  $("ajustada").innerHTML = scen(c.cuota,c.capturaAj,c.facturaAj,k.pCapAj,k.pFacAj,0);
+  const falta = c.cuota - c.facturaAj, sn = $("shortNote");
+  sn.hidden = !(falta > 0.0001);
+  if(falta > 0.0001) sn.innerHTML = `Incluyendo novedades, la factura queda en ${pct(k.pFacAj)} de la cuota: le faltaron <b>${mm(falta)}</b> para llegar al 100%.`;
+
+  const bCls = k.brecha<0?"neg":"pos";
+  $("diffs").innerHTML =
+    `<div class="diff ${bCls}"><div class="dl">Factura vs Cuota</div><div class="dv num">${smm(k.brecha)}</div><div class="ds">${k.brecha<0?"Faltan "+mm(-k.brecha)+" para la cuota":"Supera la cuota en "+mm(k.brecha)}</div></div>`+
+    `<div class="diff pos"><div class="dl">Factura ajustada vs actual</div><div class="dv num">${sfx(k.deltaFac)}</div><div class="ds">Con ajuste queda en ${pct(k.pFacAj)} de cuota (${smm(k.brechaAj)})</div></div>`;
+
+  let kp = tile(c.nPedidos,"Pedidos por fuera")+tile(fx(c.totalPedidos??k.sumPed)+" MM","Valor pedidos por fuera");
+  kp += `<div class="tile est"><div class="v num">${mm(c.ncEstimada)}</div><div class="l">NC Estimada</div></div>`;
+  $("kpis").innerHTML = kp;
+
+  const hasCap = c.pedidos.some(p=>p[3]);
+  const hasObs = c.pedidos.some(p=>p[4]);
+  $("pedidos").innerHTML =
+    `<thead><tr><th>Pedido</th>${hasCap?"<th>Fecha captura</th>":""}<th>Fecha factura</th><th class="r">Valor pedido (MM)</th>${hasObs?"<th>Observación</th>":""}</tr></thead><tbody>`+
+    c.pedidos.map(p=>`<tr><td class="num">${p[0]}</td>${hasCap?`<td class="num">${esc(p[3]||"")}</td>`:""}<td>${esc(p[1])}</td><td class="r num">${fx(p[2])}</td>${hasObs?`<td>${esc(p[4]||"")}</td>`:""}</tr>`).join("")+
+    `</tbody><tfoot><tr><td></td>${hasCap?"<td></td>":""}<td class="r">Total</td><td class="r num">${fx(c.totalPedidos??k.sumPed)} MM</td>${hasObs?"<td></td>":""}</tr></tfoot>`;
+  $("consid").innerHTML = (c.consideraciones||CONSID_DEFAULT).map(t=>`<li>${esc(t)}</li>`).join("");
+  $("difFact").textContent = fx(k.deltaFac)+" MM";
+}
+
+function renderCons(ciudadFiltro){
+  PCT_DEC = 0;
+  const list = DATA.filter(c=>!ciudadFiltro||c.ciudad===ciudadFiltro);
+  const cities=[...new Set(list.map(c=>c.ciudad))];
+  const T={cuota:0,captura:0,factura:0,capturaAj:0,facturaAj:0,dif:0,nc:0,falta:0};
+  const pc=v=>`<span class="${v>=1?"pc-ok":"pc-warn"}">${pct(v)}</span>`;
+  const td=(v,cls="")=>`<td class="r num ${cls}">${v}</td>`;
+  const decOf=c=>c.pedidos.some(p=>Math.round(p[2]*100)%10!==0)?2:1;
+  const fd=(v,d)=>v.toLocaleString("es-CO",{minimumFractionDigits:d,maximumFractionDigits:d});
+  const sd=(v,d)=>(v>0?"+":v<0?"−":"")+fd(Math.abs(v),d)+" MM";
+  let body="";
+  cities.forEach(ci=>{
+    body+=`<tr class="city-row"><td colspan="14">${ci}</td></tr>`;
+    list.filter(c=>c.ciudad===ci).forEach(c=>{
+      const k=calc(c), d=decOf(c), falta=Math.max(0,c.cuota-c.facturaAj);
+      T.falta+=falta;
+      PCT_DEC = c.pctDec||0;
+      T.cuota+=c.cuota;T.captura+=c.captura;T.factura+=c.factura;T.capturaAj+=c.capturaAj;T.facturaAj+=c.facturaAj;T.dif+=k.deltaFac;T.nc+=c.ncEstimada;
+      body+=`<tr data-id="${c.id}" tabindex="0"><td>${esc(c.cliente)}</td>`+td(mm(c.cuota))+
+        td(mm(c.captura),"gs")+td(pc(k.pCap))+td(mm(c.factura))+td(pc(k.pFac))+td(smm(k.brecha),k.brecha<0?"neg-t":"pos-t")+
+        td(nf(c.capturaAj,0)+" MM","gs")+td(pc(k.pCapAj))+td(nf(c.facturaAj,0)+" MM")+td(pc(k.pFacAj))+td(falta>0.0001?mm(falta):"—",falta>0.0001?"neg-t":"")+td(sd(k.deltaFac,d),"pos-t")+
+        td(mm(c.ncEstimada),"gs")+`</tr>`;
+    });
+  });
+  PCT_DEC = 0;
+  const tb=T.factura-T.cuota;
+  $("consTbl").innerHTML=
+   `<thead><tr class="grp"><th></th><th></th><th colspan="5" class="gs">Liquidación Actual</th><th colspan="6" class="gs">Liquidación Incluyendo Novedades</th><th class="gs"></th></tr>`+
+   `<tr><th>Cliente</th><th class="r">Cuota</th><th class="r gs">Captura</th><th class="r">%Captura</th><th class="r">Factura</th><th class="r">%Factura</th><th class="r">Fact. vs Cuota</th><th class="r gs">Captura</th><th class="r">%Captura</th><th class="r">Factura</th><th class="r">%Factura</th><th class="r">Faltante 100%</th><th class="r">Dif. facturación</th><th class="r gs">NC estim.</th></tr></thead><tbody>${body}</tbody>`+
+   `<tfoot><tr><td>Total</td>`+td(mm(T.cuota))+td(mm(T.captura),"gs")+td(pc(T.captura/T.cuota))+td(mm(T.factura))+td(pc(T.factura/T.cuota))+td(smm(tb),tb<0?"neg-t":"pos-t")+
+   td(nf(T.capturaAj,0)+" MM","gs")+td(pc(T.capturaAj/T.cuota))+td(nf(T.facturaAj,0)+" MM")+td(pc(T.facturaAj/T.cuota))+td(T.falta>0?mm(T.falta):"—","neg-t")+td(sd(T.dif,2),"pos-t")+td(mm(T.nc),"gs")+`</tr></tfoot>`;
+  $("consTbl").innerHTML = $("consTbl").innerHTML.replace(/ MM</g,"<");
+  $("consTbl").querySelectorAll("tbody tr[data-id]").forEach(tr=>{
+    const go=()=>{ $("sel").value=tr.dataset.id; show(tr.dataset.id); };
+    tr.addEventListener("click",go);
+    tr.addEventListener("keydown",e=>{if(e.key==="Enter")go();});
+  });
+}
+
+let cityFilter=null;
+function show(id){
+  const isCons = id.startsWith("__cons");
+  $("clientView").hidden=isCons; $("consView").hidden=!isCons;
+  document.body.classList.toggle("cons-mode",isCons);
+  if(isCons){ $("city").textContent = cityFilter||"Consolidado"; renderCons(cityFilter); }
+  else renderClient(DATA.find(c=>c.id===id));
+  try{localStorage.setItem("cumpl_sel",id)}catch(e){}
+}
+
+function buildSelect(){
+  const sel=$("sel"); const cities=[...new Set(DATA.map(c=>c.ciudad))];
+  let h=`<option value="__cons">Consolidado — todos los clientes</option>`;
+  cities.forEach(ci=>{
+    h+=`<optgroup label="${ci}">`+DATA.filter(c=>c.ciudad===ci).map(c=>`<option value="${c.id}">${esc(c.cliente)}</option>`).join("")+`</optgroup>`;
+  });
+  sel.innerHTML=h;
+  sel.addEventListener("change",()=>{cityFilter=null;paintChips();show(sel.value)});
+  const chips=$("chips");
+  chips.innerHTML=`<button data-c="">Todas</button>`+cities.map(ci=>`<button data-c="${ci}">${ci}</button>`).join("");
+  chips.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{
+    cityFilter=b.dataset.c||null; paintChips(); sel.value="__cons"; show("__cons");
+  }));
+}
+function paintChips(){
+  $("chips").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String((b.dataset.c||null)===cityFilter && $("sel").value==="__cons")));
+}
+
+buildSelect();
+let start="sanpio";
+try{const s=localStorage.getItem("cumpl_sel"); if(s && (s.startsWith("__cons")||DATA.some(c=>c.id===s))) start=s;}catch(e){}
+$("sel").value=start; show(start); paintChips();
+</script>
+</body>
+</html>
